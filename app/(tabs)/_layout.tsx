@@ -7,6 +7,7 @@ import { IconSymbol } from '@/components/ui/IconSymbol';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { Feather, Foundation } from '@expo/vector-icons';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -34,11 +35,38 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="shop"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Shop',
+          tabBarIcon: ({ color }) => 
+          <Foundation size={28} name="shopping-cart" color={color} />,
         }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color }) => 
+          <Feather size={28} name="user" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="search"
+        options={{
+          href: null,
+          }}
+      />
+      <Tabs.Screen
+        name="favorites"
+        options={{
+          href: null,
+          }}
+      />
+      <Tabs.Screen
+        name="cart"
+        options={{
+          href: null,
+          }}
       />
     </Tabs>
   );
